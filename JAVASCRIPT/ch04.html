@@ -1,11 +1,16 @@
 <script>
     var a = 10; // 숫자형의 경우
     var b = '10'; // 문자형의 경우 (일공이라 읽는)
+    var c = pareInt(b); // 변수 새로 만들고 형변환 지정 가능
 
     console.log(a + a); // 숫자가 서로 더해지지만
     console.log(b + b); // 1010이 그대로 나열됨
-    console.log(a + b);
-    console.log(a + ((a + b));
+    console.log(a + parseInt(b)); // b를 정수로 형변환 한 것
+    console.log(b + Number(b)); // b 형변환
+// 정수 형변환 두 가지의 차이점
+    //pareInt('14134a') -> 123
+    //Number('4134dd') -> 에러, ('1234')처럼 정수임에도 불구하고 넘버로 형변환 시 에러
+    console.log(a + (a + b)); // 우선순위를 높일 수 있음
 
     var c = 0b10; // 2진수
     var d = 0o10; // 8진수
