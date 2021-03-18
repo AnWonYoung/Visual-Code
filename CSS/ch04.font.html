@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-size: 16px; } /*em과 rem의 차이점*/
+        .cls1 { padding: 1.2em; } /*이 때는 위의 바디 직속으로 바로 계산, 폰트 사이즈 기준 X*/
+        .cls1 { font-size: 1.2em; }     /*16픽셀에서 cls1으로 1.2배 커짐 !! 위에서 패딩의 픽셀값을 상속받는 건 아님*/
+/*      .cls1 { font-size: 1.2em; padding: 1em} 패딩 값을 추가해도 폰트 사이즈에서 패딩 em을 계산하게 됨 (2em이라면 두 배..)*/        
+        .cls2 { font-size: 1.2em; }     /*1.2배 커진 픽셀에서 1.2배 또 커짐*/
+        
+        .cls3 { font-size: 1.2rem; }    /*16픽셀의 바디에서 1.2배 커짐*/
+        .cls4 { font-size: 1.2rem; }    /*그 아래 상속 1.2배라 하더라도 body 기준으로 계산되어서 더 커지지 않음*/
+    </style>
+</head>
+<body>
+    원래크기
+    <div class="cls1"> 
+        안녕하세요1.
+        <div class="cls2">
+            안녕하세요2.
+            <div class="cla2_1">
+                안녕하세요3.
+            </div>
+        </div>
+    </div>
+    <div class="cls3">
+        Hello
+        <div class="cls4">
+            Hello
+        </div>
+    </div>
+</body>
+</html>

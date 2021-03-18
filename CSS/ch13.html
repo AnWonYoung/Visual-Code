@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        #parent {
+            display: flex; /*부모에서 flex가 있으면 아래 자식에게도 flex가 적용*/
+        }
+        #container {
+            flex-grow: 1;
+            background-color: cadetblue;
+            height: 200px;
+            display: flex; /*flex를 선언해줘야 아래 코드가 적용*/
+            flex-direction: column; /*위에서 아래로 column-reverse는 역방향*/
+ /*         flex-direction: row;*/
+            justify-content:flex-start; /*정방향을 조절 및 간격 조절하는 것*/
+            align-items: center  /*가로 방향 조절하는 것*/
+        }
+        #container2 {
+            display: flex;
+            flex-grow: 1; /*비율, 부모의 견적을 기준으로 차지 (비중)*/
+            background-color: darkolivegreen;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="container">        <!--flex주면서 블락태그지만 옆으로 글자가 나옴-->
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        </div>
+    </div> 
+    <div id="container2">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+</body>
+</html>

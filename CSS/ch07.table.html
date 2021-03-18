@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table ex</title>
+    <style>
+        table {width: 500px; /*크기 조절 % 물론 가능함*/}
+        table td {
+            border-collapse: collapse;
+            border: 1px solid black;    /* 한 줄로 명령하기 */
+               /* 나눠지는 줄을 합치기 */
+        } 
+        /* .td1 { width: 110px;}
+        .td2 { width: 200px;}
+        td:last-child { width: 100px;} */
+        td:nth-child(1) {width: 100px;} /*()안에 원하는 칸 수를 넣기*/
+        td:not(:first-child) {                  /*첫 번째 자식은 제외하고 색 넣기*/
+            background-color: dimgrey;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body> <!--테이블 만들기-->
+<table>
+    <tr>
+        <td class="td1">First</td>
+        <td class="td2">LastName</td>
+        <td class="td3">Savaings</td>
+    </tr>
+    <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+        <td>천원</td>
+    </tr>
+    <tr>
+        <td>Lobis</td>
+        <td>Griffin</td>
+        <td>이천원</td>
+    </tr>
+    <tr>
+        <td>Joe</td>
+        <td>Swanson</td>
+        <td>삼천원</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/*div+span 처럼 태그 두개를 사용하는 건 X*/
+    div .center {            
+        text-align: center;
+        color: red;
+    }
+    div .right {                 /*div 자식 중 오른쪽에 있는 것만 적용하겠다는 의미*/
+        text-align: right;
+        color: blue;
+    }
+    div > .left {               /*div 중에서도 가장 바로 밑에 있는 직속 자식의 left만 색을 입힌다는 의미*/
+        text-align: left;
+        color: darkslateblue;
+    }
+    div.#pk {                   /*클래스 명 지정하는 것 가능*/
+        background-color: deeppink;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="center">첫번째</div>
+    <div>두번째</div>
+    <div> 세번째
+        <div class="right">네번째</div>
+    </div>
+    <p class="right">다섯번째</p>
+    <div>
+        <section>                       
+            <div class="left">
+                여섯번째
+            </div>
+            <div class="right">
+                일곱번째
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    /*css부터 먼저 적용 후 차례로 적용, 레드로 보임*/
+    <style>
+        h1 {
+            color: orange;
+        }
+
+        h2 {
+            color: red !important; /*important 적용으로 우선순위 높이기*/
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="ch02.css">
+</head>
+<body>
+    <h1 style="color: pink;">Hello</h1>
+    <h2>
+        좋아요
+        <div>
+            <span>
+                안녕
+             </span>
+        </div>
+    </h2>
+    
+</body>
+</html>
