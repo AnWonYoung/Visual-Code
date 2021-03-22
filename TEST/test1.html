@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="주소값" method="어떤 방식으로 날아갈지">
+                <div><label>아이디: <input type="text" id="textId"></label></div> <!--label = 아이디만 눌러도 박스와 연결-->
+                <div><label>비밀번호: <input type="password" id ="textPw"></label></div>
+            <div>
+                성별:
+                <label>여성<input type="radio" name="gender" checked></label>
+                <label>남성<input type="radio" name="gender"></label>
+<!--            <input type="reset" value="초기화">
+                <input type="submit" value="전송">--> 
+            </div>
+            <div>                                                                   <!--form 아래에 있을 때만 작동-->
+                <a href="join.html"><input type="button" value="join"></a> <!--join 박스 만들기, 주소로 이동하기-->
+                <input type="button" value="login" onclick="clkLogin();"> <!--oneclick 명(); << 해주기-->
+            </div>
+        </form>
+    </div>
+        <script>
+            function clkLogin() { // 함수, 함수명() {}, 함수명은 input에서 사용한 oneclick의 명으로
+                var txtIdElem = document.getElementById('textId') // id 변수 값 연결
+                console.log('txtIdElem.value');
+                if(txtIdElem.value === '');
+                    alert('로그인을 할 수 없습니다.')
+                var textPwElem = document.getElementById('textPw')
+                console.log('textPwElem.value');
+                if(textPwElem.value === '');
+                    alert('로그인을 할 수 없습니다.')
+            }
+        </script>
+</body>
+</html>
