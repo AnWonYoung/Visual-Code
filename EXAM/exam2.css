@@ -1,0 +1,86 @@
+html { scroll-behavior: smooth;} /* 스크롤 부드럽게 이동 */
+html, body {
+    padding: 0;
+    margin: 0;
+}
+footer {
+    position: fixed; /* 하단 화면 고정 */
+    bottom: 0;
+    left: auto;
+    padding: .75rem; /*0.75 사이즈를 줄 때 .75로 대체*/
+}
+
+a {
+    text-decoration: none; /*a 밑줄 제거*/
+    border-radius: .25rem;
+    transition: all .3s; /* 삭- 바뀌는 거*/
+    background-color: goldenrod;
+    color: white;
+}
+
+a:hover {
+    opacity: .6;
+}
+
+ul {
+    list-style: none; /* 리스트 점 없애기*/
+    padding: 10px;
+    margin: 0;
+
+}
+
+.breweries>ul { /* 1700px 이상일 때 4개의 박스가 일렬로 보이도록 설정*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;  
+}
+
+.breweries>ul>li { /*li 전체 선택*/
+    border: 1px solid #e2e2e2; /* 선 생성 */
+    border-radius: .5rem; /* 라운드 처리 */
+    position: relative; 노란박스 a 태그 올바르게 위치 고정해주기 위한 설정 static과 동일하여 부모 역할이 가능함
+}
+
+.breweries>ul>li>figure {
+    overflow: hidden; /* 이미지가 일부 숨겨지면서 아래의 글이 보이게 됨*/
+    position: relative;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    max-height: 220px;
+}
+
+.breweries>ul>li>figure>img {
+    width: 100%; /* overflow hidden으로 적당한 값 주기*/
+}
+
+.breweries>ul>li>figure>figcaption { /* 글자만 선택 */
+    position: absolute; /*부모를 찾아서 이동 (static기준으로 figure에 relative를 줌으로 부모가 됨)*/
+    bottom: 0; /* 부모에게 달라 붙는, 사진 위에 글자가 나타나는 것 설정*/
+    background-color: rgba(0, 0, 0, .7); /* 마지막에 투명도 설정 */
+    width: 100%;
+}
+
+.breweries>ul>li>figure>figcaption>h3 { /* 해당 텍스트에 컬러 설정*/
+    color: #fff;
+    padding: .75rem;
+    font-size: 1.25rem;  
+}
+
+.breweries>ul>li>p { /* 아래 작은 글씨 전체 선택 */
+    line-height: 1.5; /* 글씨 간격 */
+    padding: 1rem.75rem; /* 위아래 값. 좌우 값*/
+    color: #666;
+}
+
+.breweries>ul>li>a {
+    padding: .5rem 1rem;
+    margin: .5rem;
+    left: .5rem;
+    bottom: .5rem;
+}
+
+
+
+
+
+

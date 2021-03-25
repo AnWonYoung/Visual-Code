@@ -1,5 +1,6 @@
 // 첫 번째 문제 로그인
 function clklogin() {
+    // console.log('Id값: ' + textId.value);    가능하지만 불안정함
     var textId = document.getElementById('textId').value;
     console.log('textId.value');
     var textPw = document.getElementById('textPw').value;
@@ -30,5 +31,5 @@ function memberjoin() {
         alert('비밀번호를 확인해주세요.');
         return;
     }
-    location.href = 'main.html'
+    location.href = 'main.html' // 로그인으로 가야 정답
 }
