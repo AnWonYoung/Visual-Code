@@ -1,13 +1,24 @@
 html { scroll-behavior: smooth;} /* 스크롤 부드럽게 이동 */
+
 html, body {
     padding: 0;
     margin: 0;
+    height: 100%;
+    width: 100%;
 }
+
+.wrapper { /* 하단 고정 설정*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* view port의 값을 쓰겠다는 설정 */
+}
+
 footer {
-    position: fixed; /* 하단 화면 고정 */
+    /* position: fixed; 하단 화면 고정 << 점수 감점은 아님 현재는 flex로 고정한 상태 */
     bottom: 0;
     left: auto;
     padding: .75rem; /*0.75 사이즈를 줄 때 .75로 대체*/
+    height: 60px; /* 하단 고정 값 주기 */
 }
 
 a {
@@ -19,26 +30,27 @@ a {
 }
 
 a:hover {
-    opacity: .6;
+    opacity: .6; /* 투명도 */
 }
 
 ul {
     list-style: none; /* 리스트 점 없애기*/
     padding: 10px;
     margin: 0;
-
 }
 
 .breweries>ul { /* 1700px 이상일 때 4개의 박스가 일렬로 보이도록 설정*/
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;  
+    gap: 1rem; 
+    grid-auto-rows: 450px; /* visit website 간격을 일정하게 줌으로 생긴 글자 겹칩을 그리드 크기로 조절하는 것*/
+    /* flex: 2;  ?????????? flex 사용으로 메인 정렬 값 주는 것..*/
 }
 
 .breweries>ul>li { /*li 전체 선택*/
     border: 1px solid #e2e2e2; /* 선 생성 */
     border-radius: .5rem; /* 라운드 처리 */
-    position: relative; 노란박스 a 태그 올바르게 위치 고정해주기 위한 설정 static과 동일하여 부모 역할이 가능함
+    position: relative; /*노란박스 a 태그 올바르게 위치 고정해주기 위한 설정 static과 동일하여 부모 역할이 가능함*/
 }
 
 .breweries>ul>li>figure {
@@ -74,6 +86,7 @@ ul {
 
 .breweries>ul>li>a {
     padding: .5rem 1rem;
+    position: absolute; /* li에서 준 relative를 absolute로 받아준 다음 박스 고정시키기 */
     margin: .5rem;
     left: .5rem;
     bottom: .5rem;
