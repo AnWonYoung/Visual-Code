@@ -7,18 +7,22 @@ html, body {
     width: 100%;
 }
 
-.wrapper { /* 하단 고정 설정*/
+/* .body { 하단 고정 설정       position fixed로 대체 가능
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* view port의 값을 쓰겠다는 설정 */
-}
+    min-height: 100vh; view port의 값을 쓰겠다는 설정
+} */
+
+/* .wrapper {       flex로 설정했을 때 사용
+    flex: 1;
+} */
 
 footer {
-    /* position: fixed; 하단 화면 고정 << 점수 감점은 아님 현재는 flex로 고정한 상태 */
+    position: fixed; /*하단 화면 고정*/ 
     bottom: 0;
     left: auto;
-    padding: .75rem; /*0.75 사이즈를 줄 때 .75로 대체*/
-    height: 60px; /* 하단 고정 값 주기 */
+    padding: .75rem; 0.75 사이즈를 줄 때 .75로 대체
+    /* height: 50px; flex로 설정했을 때 하단 고정 값 주기 */
 }
 
 a {
@@ -44,7 +48,6 @@ ul {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem; 
     grid-auto-rows: 450px; /* visit website 간격을 일정하게 줌으로 생긴 글자 겹칩을 그리드 크기로 조절하는 것*/
-    /* flex: 2;  ?????????? flex 사용으로 메인 정렬 값 주는 것..*/
 }
 
 .breweries>ul>li { /*li 전체 선택*/
